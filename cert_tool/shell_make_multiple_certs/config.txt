@@ -1,0 +1,9 @@
+rsa_keylength=2048
+country=US
+state=CA
+locality=SJC
+organization=N_labs
+organizational_unit="Unit W"
+# common_name=RA_
+number_of_certificates=10
+

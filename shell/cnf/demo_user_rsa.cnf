@@ -1,0 +1,31 @@
+# OpenSSL Configuration File for RSA
+entity_node_name = demo_user
+name_main = demo_user.rsa2048
+
+[req]
+default_bits = 2048
+default_md = sha256
+prompt = no
+distinguished_name = dn
+req_extensions = ext
+encrypt_key = no
+
+[dn]
+CN = www.demo_user.com
+emailAddress = demo_user@demo.com
+O = Demo Organization
+OU = Cryptography Unit
+L = San Jose
+ST = California
+C = US
+
+[ext]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth, clientAuth, codeSigning, emailProtection
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = www.demo_user.com
+DNS.2 = demo_user.com
+DNS.3 = demo.demo_user.com

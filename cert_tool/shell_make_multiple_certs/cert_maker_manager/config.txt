@@ -1,0 +1,22 @@
+# Certificate Manager Configuration
+
+# Default key size for RSA keys
+KEY_SIZE=2048
+
+# Default certificate validity period (in days)
+CERT_VALIDITY=3650
+
+# Default directories (relative paths)
+KEY_STORE=key_store
+CSR_DIR=csr
+CERTS_DIR=certs
+LOGS_DIR=logs
+
+# Default OpenSSL configuration file (if needed)
+OPENSSL_CONFIG=cnf/openssl.cnf
+
+# Log file
+LOG_FILE=logs/cert_manager.log
+
+
+

@@ -1,0 +1,41 @@
+# OpenSSL configuration file for generating certificates
+
+[ req ]
+default_bits_for_rsa       = 2048
+default_bits_for_ecdsa     = 256
+default_keyfile            = privkey.pem
+distinguished_name         = req_distinguished_name
+string_mask                = utf8only
+x509_extensions           = v3_ca
+req_extensions            = v3_req
+
+[ req_distinguished_name ]
+countryName             = Country Name (2 letter code)
+countryName_default     = US
+stateOrProvinceName     = State or Province Name (full name)
+stateOrProvinceName_default = California
+localityName            = Locality Name (eg, city)
+localityName_default    = San Francisco
+organizationName        = Organization Name (eg, company)
+organizationName_default = MyCompany
+organizationalUnitName  = Organizational Unit Name (eg, section)
+organizationalUnitName_default = IT Department
+commonName              = Common Name (e.g. server FQDN or YOUR name)
+commonName_max          = 64
+emailAddress            = Email Address
+emailAddress_max        = 64
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = example.com
+DNS.2 = www.example.com
+
+[ v3_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always,issuer
+basicConstraints = CA:TRUE
+keyUsage = cRLSign, keyCertSign
